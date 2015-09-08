@@ -130,9 +130,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
+    'registration',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -173,4 +174,6 @@ try:
 except Exception, e:
 	pass
     # logging.debug("local_settings not found or contains errors(%s). Skipping local_settings.. " % e)
+    
+ACCOUNT_ACTIVATION_DAYS = 7
 
