@@ -1,4 +1,4 @@
-﻿"""
+"""
 Django settings for djangocon project.
 """
 
@@ -177,3 +177,13 @@ except Exception, e:
     
 ACCOUNT_ACTIVATION_DAYS = 7
 
+# Copied from Hello Web App ch 10 for temp email ability
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'testing@example.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_PORT = 1025
+
+#Also copied. Is "home" correct?
+LOGIN_REDIRECT_URL = "home"
