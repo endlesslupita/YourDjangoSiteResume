@@ -51,15 +51,15 @@
                         <a href="#page-top"></a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="page-scroll">
-                        <a href="#auth_logout">Logout</a>
+                    <li>
+                        <a href="{% url 'auth_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="page-scroll">
-                        <a href="#auth_login">Login</a>
+                    <li>
+                        <a href="{% url 'auth_login' %}">Login</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#registration_register">Pledge</a>
+                    <li>
+                        <a href="{% url 'registration_register' %}">Register</a>
                     </li>
                     {% endif %}
                     <li class="page-scroll">
