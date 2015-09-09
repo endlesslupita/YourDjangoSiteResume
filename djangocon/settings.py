@@ -1,4 +1,4 @@
-"""
+﻿"""
 Django settings for djangocon project.
 """
 
@@ -130,10 +130,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
-    'registration',
+    # 'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -174,16 +173,4 @@ try:
 except Exception, e:
 	pass
     # logging.debug("local_settings not found or contains errors(%s). Skipping local_settings.. " % e)
-    
-ACCOUNT_ACTIVATION_DAYS = 7
 
-# Copied from Hello Web App ch 10 for temp email ability
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'testing@example.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
-
-#Also copied. Is "home" correct?
-LOGIN_REDIRECT_URL = "home"
