@@ -143,6 +143,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
         MKDIR "%DEPLOYMENT_TARGET%\static"
       )
       env\scripts\python manage.py collectstatic --noinput --clear
+      env\scripts\python manage.py migrate
     )
   )
 )
