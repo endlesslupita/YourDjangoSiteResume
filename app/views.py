@@ -38,7 +38,7 @@ class PledgeView(CreateView):
     
     def get_context_data(self, **kwargs):
         return super(PledgeView, self).get_context_data(
-            object_list=Pledge.objects.all(),
+            object_list=Pledge.objects.all().order_by('-pk'),
             attendee=YOUR_INFO,
             year=datetime.now().year,
             **kwargs
