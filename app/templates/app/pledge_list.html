@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<section id="contact">
+<!--<br /><br /><br /><br />-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Pledge</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tdata>
+            {% for object in object_list %}
+            <tr>
+                <td>{{ object.pledge }}</td>
+                <td>{{ object.name }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">No pledges yet! Please pledge!</td>
+            </tr>
+            {% endfor %}
+        </tdata>
+    </table>
+    </section>
+{% endblock content %}

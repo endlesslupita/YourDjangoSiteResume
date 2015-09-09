@@ -1,11 +1,14 @@
-﻿"""
+"""
 Definition of views.
 """
-
+from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from django.views.generic import CreateView, ListView
+from .forms import PledgeForm
+from .models import Pledge
 
 YOUR_INFO = {
     'name' : 'Pledge My Part',
@@ -27,3 +30,21 @@ def home(request):
                 'year': datetime.now().year,
             })
     )
+    
+class PledgeView(CreateView):
+    template_name = 'app/base.html'
+    form_class = PledgeForm
+    success_url = reverse_lazy('home')
+    
+    def get_context_data(self, **kwargs):
+        return super(PledgeView, self).get_context_data(
+            object_list=Pledge.objects.all(),
+            attendee=YOUR_INFO,
+            year=datetime.now().year,
+            **kwargs
+        )
+    
+    
+class PledgeListView(ListView):
+    model = Pledge
+    template_name = 'app/pledge_list.html'

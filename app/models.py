@@ -12,7 +12,7 @@ class Pledge(models.Model):
         max_length=128,
         null=True,
         blank=True,
-        default='Anonymous',
-        help_text='Leave NAME blank to remain anonymous',
+        # default='Anonymous',
+        # help_text='Leave NAME blank to remain anonymous',
     )
     completed = models.BooleanField(default=False)

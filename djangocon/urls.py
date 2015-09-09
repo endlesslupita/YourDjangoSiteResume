@@ -1,4 +1,4 @@
-﻿"""
+"""
 Definition of urls for djangocon.
 """
 
@@ -9,10 +9,13 @@ from django.conf.urls import patterns, url
 # from django.conf.urls import include
 # from django.contrib import admin
 # admin.autodiscover()
+from app.views import PledgeView, PledgeListView
 
 urlpatterns = patterns('',
 
-    url(r'^$', 'app.views.home', name='home'),
+    # url(r'^$', 'app.views.home', name='home'),
+    url(r'^$', PledgeView.as_view(), name='home'),
+    url(r'^list/$', PledgeListView.as_view(), name='list'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
